@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 
@@ -54,6 +55,9 @@ export class BookItem extends Component {
                     <small>Review by { this.state.author }</small>
                     <img style={{width: '100%'}} src={this.state.imageUrl} alt={this.props.book.title.rendered}></img>
                     <div dangerouslySetInnerHTML={{ __html: excerpt.rendered }} />
+
+                    <Link to={`/book/${this.props.book.id}`}>Read Review</Link>
+                    <hr />
                 </div>
             )
         }
